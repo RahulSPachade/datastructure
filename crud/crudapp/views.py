@@ -1,4 +1,3 @@
-# views.py
 from django.shortcuts import render, redirect
 from .models import Book
 from .forms import BookForm
@@ -16,13 +15,11 @@ def create_book(request):
 
     return render(request, 'create_book.html', {'form': form})
 
-# views.py
 
 def book_list(request):
     books = Book.objects.all()
     return render(request, 'book_list.html', {'books': books})
 
-# views.py
 
 def update_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
@@ -37,7 +34,6 @@ def update_book(request, pk):
 
     return render(request, 'update_book.html', {'form': form, 'book': book})
 
-# views.py
 
 def delete_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
